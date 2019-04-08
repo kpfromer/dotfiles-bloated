@@ -437,7 +437,6 @@ bindsym XF86WLAN		exec $netrefresh
 
 exec --no-startup-id lukescripts
 # Random background
-exec --no-startup-id ~/random-background.sh
-#exec --no-startup-id feh --randomize --recursive --bg-fill ~/Images/Backgrounds/*
+exec --no-startup-id feh --randomize --recursive --bg-fill ~/.backgrounds
 # Remove reminder for help
 #exec_always --no-startup-id notify-send -i ~/.scripts/pix/larbs.png '<b>Welcome to LARBS:</b> Press Super+F1 for the manual.' -t 10000
