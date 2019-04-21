@@ -1,0 +1,2 @@
+#!/bin/sh
+du -a ~/.scripts ~/.config | awk '{print $2}' | xargs | fzf
