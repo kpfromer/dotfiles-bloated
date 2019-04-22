@@ -2,7 +2,7 @@
 # Profile file. Runs on login.
 
 # Adds `~/.scripts` and all subdirectories to $PATH
-export PATH="$PATH:/home/kpfromer/.gem/ruby/2.6.0/bin:/home/kpfromer/.npm-global/bin:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':')"
+export PATH="$PATH:/var/lib/snapd/snap/bin:/home/kpfromer/.gem/ruby/2.6.0/bin:/home/kpfromer/.npm-global/bin:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':')"
 export EDITOR="nvim"
 export TERMINAL="termite"
 export BROWSER="google-chrome-stable"
@@ -34,10 +34,3 @@ echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc
 
 # Switch escape and caps if tty:
 sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
-
-# NPM Permissions
-#export PATH=~/.npm-global/bin:$PATH
-
-if which ruby >/dev/null && which gem >/dev/null; then
-  PATH="$PATH:$(ruby -rubygems -e 'puts Gem.user_dir')/bin"
-fi
