@@ -50,7 +50,7 @@ for_window [instance="dropdown_*"] move position center
 
 # #---Starting External Scripts---# #
 # Setting the background:
-exec --no-startup-id $HOME/random-background.sh
+exec --no-startup-id setbg
 # Old Background set (not random)
 #exec --no-startup-id setbg
 # Start Polybar
@@ -214,13 +214,13 @@ bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdow
 bindsym $mod+c			exec --no-startup-id freealf
 bindsym $mod+Shift+c		exec --no-startup-id camtoggle
 
-bindsym $mod+v			exec --no-startup-id st -e vim -c "VimwikiIndex"
+bindsym $mod+v			exec --no-startup-id $term -e vifmrun
 #bindsym $mod+Shift+v
 
 bindsym $mod+b			bar mode toggle
 bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id hover left
 
-bindsym $mod+n                  exec --no-startup-id boostnote
+bindsym $mod+n                  exec $term -d $(xcwd)
 #bindsym $mod+n			exec $term -e newsboat && pkill -RTMIN+6 i3blocks
 bindsym $mod+Shift+n		floating toggle; sticky toggle; exec --no-startup-id hover right
 
@@ -248,7 +248,7 @@ bindsym $mod+slash		split vertical ;; exec $term
 bindsym $mod+Shift+slash	kill
 bindsym $mod+backslash		workspace back_and_forth
 
-bindsym $mod+Shift+Enter        exec "termite -d $(xcwd)"
+bindsym $mod+Shift+Enter        exec $term -d $(xcwd)
 
 set $ws1 "1"
 set $ws2 "2"
@@ -436,7 +436,5 @@ bindsym XF86Documents		exec $term -e $FILE ~/Documents
 bindsym XF86WLAN		exec $netrefresh
 
 exec --no-startup-id lukescripts
-# Random background
-exec --no-startup-id feh --randomize --recursive --bg-fill ~/.backgrounds
 # Remove reminder for help
 #exec_always --no-startup-id notify-send -i ~/.scripts/pix/larbs.png '<b>Welcome to LARBS:</b> Press Super+F1 for the manual.' -t 10000

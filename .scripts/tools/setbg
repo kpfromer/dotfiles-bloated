@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[[ ! -z "$1" ]] && wall=$1 || wall=$(find .backgrounds/ -type f | shuf -n 1)
+xwallpaper --zoom $wall
+notify-send "Wallpaper changed" -u low
