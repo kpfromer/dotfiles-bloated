@@ -1,223 +1,71 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
 [colors]
-background = #282a36
-background-alt = #073642
-foreground = #93a1a1
-foreground-alt = #555
+background = #07060F
+background-alt = #8be9fd
+foreground = #FFFFFF
+foreground-alt = #F0F0F0
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 [bar/top]
 dpi = 220
 width = 100%
 height = 44
-fixed-center = true
+radius = 0.0
+line-size = 5
+; bottom=true
+
 background = ${colors.background}
 foreground = ${colors.foreground}
-padding-left = 0
-padding-right = 0
-module-margin-left = 0
-module-margin-right = 0
 
-font-0 = Comfortaa:pixelsize=8;2
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Comfortaa:pixelsize=8;1
 font-1 = UbuntuMono Nerd Font:size=10;1
 font-2 = UbuntuMono Nerd Font:size=16;4
 
-modules-left = ip wireless-network
+modules-left = bspwm i3 windowtitle
 modules-center = date
-modules-right = weather backlight pulseaudio battery
-
-tray-position = none
-tray-padding = 2
-
-module-margin = 0
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[bar/bottom]
-dpi = 220
-bottom = true
-width = 100%
-height = 44
-fixed-center = true
-background = ${colors.background}
-foreground = ${colors.foreground}
-padding-left = 0
-padding-right = 0
-module-margin-left = 0
-module-margin-right = 0
-
-font-0 = Comfortaa:pixelsize=8;2
-font-1 = UbuntuMono Nerd Font:size=10;2
-font-2 = UbuntuMono Nerd Font:size=16;3
-
-modules-left = bspwm i3
-modules-center =  windowtitle
-modules-right = spotify
-;modules-right = spotify cpu memory
+modules-right = wireless-network backlight battery pulseaudio
 
 tray-position = right
-tray-padding =
+tray-padding = 2
+;tray-background = #0063ff
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-; #### MODULES ####
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/windowtitle]
 type = internal/xwindow
 format = <label>
 label = %title%
-format-foreground = #f5f5f5
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/battery]
-type = internal/battery
-format-charging = <animation-charging>  <label-charging>
-format-full = <label-full>
-label-charging = "  %percentage%% Charged  "
-label-full = "  Fully charged  "
-animation-charging-0 = "  "
-animation-charging-1 = "  "
-animation-charging-2 = "  "
-animation-charging-3 = "  "
-animation-charging-4 = "  "
-format-discharging = "    <label-discharging>"
-label-discharging = "  %percentage%%"
-
-format-charging-background = #ff79c6
-format-charging-foreground = #212121
-format-charging-prefix = %{T3}%{T-}
-format-charging-prefix-foreground = #ff79c6
-format-charging-prefix-background = #6272a4
-format-charging-suffix = %{T3}%{T-}
-format-charging-suffix-foreground = #ff79c6
-format-charging-suffix-background = #ff79c6
-
-
-format-discharging-background = #ff79c6
-format-discharging-foreground = #212121
-format-discharging-prefix = %{T3}%{T-}
-format-discharging-prefix-foreground = #ff79c6
-format-discharging-prefix-background = #6272a4
-format-discharging-suffix = %{T3}%{T-}
-format-discharging-suffix-foreground = #ff79c6
-format-discharging-suffix-background = #ff79c6
-
-format-full-background = #ff79c6
-format-full-foreground = #212121
-format-full-prefix = %{T3}%{T-}
-format-full-prefix-foreground = #ff79c6
-format-full-prefix-background = #6272a4
-format-full-suffix = %{T3}%{T-}
-format-full-suffix-foreground = #ff79c6
-format-full-suffix-background = #ff79c6
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/cpu]
-type = internal/cpu
-format = <label>
-label = "   %percentage%%  "
-interval = 0.5
-format-background = #44475a
-format-foreground = #f5f5f5
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = #44475a
-format-prefix-background = #44475a
-; For safe keeping :)
-;format-prefix = %{T3}%{T-}
-;format-prefix-foreground = #44475a
-;format-prefix-background = ${colors.background}
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/memory]
-type = internal/memory
-format = <label>
-label = "   %percentage_used%%  "
-interval = 3
-format-background = #50fa7b
-format-foreground = #212121
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = #50fa7b
-format-prefix-background = #44475a
-format-suffix = %{T3}%{T-}
-format-suffix-foreground = #282a36
-format-suffix-background = #50fa7b
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/pulseaudio]
-type = internal/pulseaudio
-use-ui-max = true
-interval = 5
-format-volume = "<ramp-volume> <label-volume>  "
-format-muted = <label-muted>
-label-muted = "   Muted  "
-ramp-volume-0 ="  "
-ramp-volume-1 ="   "
-ramp-volume-2 =" 墳"
-format-volume-background = #6272a4
-format-volume-foreground = #f8f8f8
-format-volume-prefix = %{T3} %{T-}
-format-volume-prefix-foreground = #6272a4
-format-volume-prefix-background = #f1fa8c
-format-muted-prefix = %{T3} %{T-}
-format-muted-background = #6272a4
-format-muted-foreground = #f8f8f8
-format-muted-prefix-foreground = #6272a4
-format-muted-prefix-background = #f1fa8c
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/backlight]
-type = internal/xbacklight
-enable-scroll = true
-format = <label>
-label = "    %percentage%%"
-format-background = #f1fa8c
-format-foreground = #212121
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = #f1fa8c
-format-prefix-background = #ffb86c
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/wireguard]
-type = custom/script
-interval = 3
-format = "<label>  "
-exec = node ~/.config/polybar/scripts/wireguard.js
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/wireless-network]
-type = internal/network
-format-connected =    <label-connected>
-label-connected = %essid% :  %upspeed%   %downspeed%
-interface = wlp3s0
-format-disconnected-suffix =%{T3}%{T-}
-format-disconnected-background = #ff5555
-format-disconnected-suffix-foreground = ${colors.background-alt}
-format-disconnected-suffix-background = #ff5555
-format-disconnected-prefix = %{T3}%{T-}
-format-disconnected-prefix-foreground = ${colors.background-alt}
-format-disconnected-prefix-background = ${colors.background-alt}
-format-connected-suffix =%{T3}%{T-}
-format-connected-background = #ff5555
-format-connected-foreground = #212121
-format-connected-suffix-foreground = #ff5555
-format-connected-suffix-background = 282a36
-format-connected-prefix = %{T3}%{T-}
-format-connected-prefix-foreground = #ff5555
-format-connected-prefix-background = #ff5555
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/ip]
-type = internal/network
-interface = wlp3s0
-format-connected =  <label-connected>
-format-disconnected = <label-disconnected>
-label-disconnected = Not Connected
-label-connected = %local_ip%
-format-connected-background = #bd93f9
-format-connected-foreground = #212121
-format-connected-suffix =%{T3}%{T-}
-format-connected-suffix-foreground = #bd93f9
-format-connected-suffix-background = #ff5555
-format-connected-prefix = %{T3}%{T-}
-format-connected-prefix-foreground = #bd93f9
-format-connected-prefix-background = #bd93f9
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+format-foreground = ${colors.foreground}
+label-maxlen = 50
+format-underline = #f90000
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/bspwm]
 type = internal/bspwm
 
@@ -245,7 +93,6 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
@@ -255,8 +102,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = #8be9fd
-label-focused-foreground = #212121
+label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
@@ -277,44 +123,75 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 ; Separator in between workspaces
 ; label-separator = |
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/battery]
+type = internal/battery
+format-charging = <animation-charging>  <label-charging>
+format-full = <label-full>
+label-charging = "  %percentage%% Charged  "
+label-full = "  Fully charged  "
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
+animation-charging-3 = "  "
+animation-charging-4 = "  "
+format-discharging = "    <label-discharging>"
+label-discharging = "  %percentage%%"
+
+format-charging-foreground = ${colors.foreground}
+format-discharging-foreground = ${colors.foreground}
+format-full-foreground = ${colors.foreground}
+format-charging-underline = #ff79c6
+format-discharging-underline = #ff79c6
+format-full-underline = #ff79c6
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
+format-volume = "<ramp-volume> <label-volume>  "
+format-muted = <label-muted>
+label-muted = "   Muted  "
+ramp-volume-0 ="  "
+ramp-volume-1 ="   "
+ramp-volume-2 =" 墳"
+format-volume-foreground = ${colors.foreground}
+format-muted-foreground = ${colors.foreground}
+format-volume-underline = #6272a4
+format-muted-underline = #6272a4
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/date]
 type = internal/date
 interval = 1.0
-date =  %A %b %e
-time = %l:%M %p
 format =   <label>
-label = %time%, %date%
-format-foreground = #f8f8f2
-;format-background = ${colors.background-alt}
-;format-prefix = %{T3}%{T-}
-;format-prefix-foreground = ${colors.background-alt}
-;format-prefix-background = ${colors.background}
-;format-suffix = %{T3}%{T-}
-;format-suffix-foreground = ${colors.background-alt}
-;format-suffix-background = ${colors.background}
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/weather]
-type = custom/script
-exec = node ~/.config/polybar/scripts/weather.js
-; 1800 = 30minutes
-interval = 1800
-format-background = #ffb86c
-format-foreground = #212121
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = #ffb86c
-format-prefix-background = ${colors.background}
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+label = %time% %date%
+date =
+time = %l:%M %p
+date-alt = %m/%d/%Y
+time-alt = %l:%M %p
+format-foreground = ${colors.foreground}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/wireless-network]
+type = internal/network
+format-connected =    <label-connected>
+label-connected = %essid% :  %upspeed%   %downspeed%
+interface = wlp59s0
+format-connected-foreground = ${colors.foreground}
+format-disconnected-foreground = ${colors.foreground}
+format-connected-underline = #bd93f9
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/backlight]
+type = internal/xbacklight
+enable-scroll = true
+format = <label>
+label = "  %percentage%%"
+; format-background = #f1fa8c
+format-foreground = ${colors.foreground}
+format-underline = #f1fa8c
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/spotify]
 type = custom/script
 interval = 3
-format = "🎵 <label>  "
+format = "🎵 <label>"
 exec = python ~/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}'
-format-background = #50fa7b
-format-foreground = #212121
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = #50fa7b
-format-prefix-background = ${colors.background}
-;format-suffix = %{T3}%{T-}
-;format-suffix-foreground = #44475a
-;format-suffix-background = #50fa7b
+format-underline = #50fa7b
