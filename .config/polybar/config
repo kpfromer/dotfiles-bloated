@@ -26,9 +26,9 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/top]
-dpi = 220
+; dpi = 220
 width = 100%
-height = 44
+height = 22
 radius = 0.0
 line-size = 5
 ; bottom=true
