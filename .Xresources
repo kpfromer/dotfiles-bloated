@@ -19,7 +19,7 @@
 st.alpha: 230
 !! Set a default font and font size as below:
 !! *.font: Monospace-14;
-Xft.dpi: 220
+!! Xft.dpi: 220
 *.font: Ubuntu Nerd Font 11
 !! xterm*faceSize: 23
 
