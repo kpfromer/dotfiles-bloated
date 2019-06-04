@@ -1,0 +1,46 @@
+A,python-ueberzug,creates viewable images in the termial (used in vifm)
+A,ffmpegthumbnailer,creates video thumbnail images 
+A,ttf-ubuntu-font-family,
+,noto-fonts,
+,i3-gaps,
+,xorg-server,
+,xorg-xwininfo,
+,vifm,
+,arandr,
+,code,
+,caja,
+A,compton-tryone-git,
+,cronie,
+,dunst,
+A,google-chrome,
+,i3lock,
+,mpv,
+,neofetch,
+,neovim,
+,networkmanager,
+,nodejs,
+,npm,
+,playerctl,
+,polybar,
+,pulseaudio,
+,pulseaudio-alsa,
+,pulsemixer,
+,rofi,
+,rsync,
+,snapd,
+,sxiv,
+,termite,
+,vi,
+,vim,
+,xwallpaper,
+,xcape,gives the special escape/super mappings.
+,zathura,
+,youtube-dl,
+,arp-scan,
+,fzf,
+A,ttf-emojione,
+,unclutter,hides an inactive mouse.
+,unrar,extracts rars.
+,unzip,unzips zips.
+,xdotool,provides window action utilities on the command line.
+,xorg-xdpyinfo,aids with resolution determination and screen recording.
