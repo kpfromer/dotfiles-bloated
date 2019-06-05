@@ -1,0 +1,1 @@
+[ "$(printf "No\\nYes" | rofi -dmenu -i -p "$1" -theme rofi_bar )" = "Yes" ] && $2
