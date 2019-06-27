@@ -226,7 +226,7 @@ bindsym $mod+Shift+n		floating toggle; sticky toggle; exec --no-startup-id hover
 
 #bindsym $mod+m 			exec --no-startup-id $term -e ncmpcpp
 bindsym $mod+Shift+m		exec --no-startup-id lmc mute
-bindsym $mod+m                  exec --no-startup-id google-chrome-stable wolframalpha.com
+bindsym $mod+m                  exec --no-startup-id $term -d $(xcwd)
 
 # #---Workspace Bindings---# #
 bindsym $mod+Home		workspace $ws1
