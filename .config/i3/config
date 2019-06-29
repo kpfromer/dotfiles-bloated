@@ -420,8 +420,8 @@ bindsym XF86Search		exec $BROWSER https://duckduckgo.com
 ##bindsym XF86Finance		exec
 ##bindsym XF86Game		exec
 bindsym XF86Shop		exec $BROWSER https://ebay.com
-bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 5
-bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 5
+bindsym XF86MonBrightnessDown	exec --no-startup-id light -U 5
+bindsym XF86MonBrightnessUp	exec --no-startup-id light -A 5
 bindsym XF86AudioMedia		exec --no-startup-id $term -e ncmpcpp
 bindsym XF86Display		exec --no-startup-id displayselect
 #bindsym XF86KbdLightOnOff	exec
@@ -436,5 +436,3 @@ bindsym XF86Documents		exec $term -e $FILE ~/Documents
 bindsym XF86WLAN		exec $netrefresh
 
 exec --no-startup-id lukescripts
-# Remove reminder for help
-#exec_always --no-startup-id notify-send -i ~/.scripts/pix/larbs.png '<b>Welcome to LARBS:</b> Press Super+F1 for the manual.' -t 10000
