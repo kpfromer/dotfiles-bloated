@@ -76,49 +76,24 @@ exec --no-startup-id mpd
 exec_always --no-startup-id podentr
 
 # Set Xresources colors:
-set_from_resource $darkblack	color0  #000000
-set_from_resource $black	color8  #000000
-set_from_resource $darkred	color1  #000000
-set_from_resource $red		color9  #000000
-set_from_resource $darkgreen	color2  #000000
-set_from_resource $green	color10 #000000
-set_from_resource $darkyellow	color3  #000000
-set_from_resource $yellow	color11 #000000
-set_from_resource $darkblue	color4  #000000
-set_from_resource $blue		color12 #000000
-set_from_resource $darkmagenta	color5  #000000
-set_from_resource $magenta	color13 #000000
-set_from_resource $darkcyan	color6  #000000
-set_from_resource $cyan		color14 #000000
-set_from_resource $darkwhite	color7  #000000
-set_from_resource $white	color15 #000000
-set $transparent		#00000000
+# Set colors from Xresources which is set by pywal (use pywal colors)
+# Change 'color7' and 'color2' to whatever colors you want i3 to use
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+# Transparent
+set $tp		#00000000
 
-#                       BORDER		BACKGROUND	TEXT		INDICATOR   CHILD_BORDER
-client.focused		$red		$red		$magenta	$darkmagenta		$darkblue
-client.unfocused	$transparent	$blue		$white		$darkblue		$darkblack
-client.focused_inactive	$transparent	$blue		$white		$darkblue		$darkblack
-client.urgent		$darkred	$darkred	$black		$darkred		$darkred
-client.background $black
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $tp     $bg     $fg  $bg       $tp
+client.unfocused        $tp     $bg     $fg  $bg       $tp
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-#NOTE pango:mono 10
-# I3BLOCKS CONFIG https://github.com/vivien/i3blocks#getting-started
-#bar {
-#	font pango:Roboto 10
-#	colors {
-#			background $darkblack
-#			statusline $darkwhite
-#			separator $cyan
-#			focused_workspace  $blue $darkblue $darkblack
- #       		active_workspace   $blue $blue $darkwhite
-  #    			inactive_workspace $darkblack $darkblack $white
-   #     		urgent_workspace   $darkblack $darkblack $white
-#		}
-#	status_command i3blocks
-#	position top
-#	mode dock
-#	modifier None
-#}
+client.background       $bg
 
 # #---Basic Bindings---# #
 bindsym $mod+Return 		exec $term
@@ -180,7 +155,7 @@ bindsym $mod+Shift+a		exec $term -e pulsemixer
 bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
 
-bindsym $mod+d			exec --no-startup-id rofi -show run -theme rofi_bar
+bindsym $mod+d			exec --no-startup-id rofi -show run
 bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
 set $freeze Distraction-free mode (super+shift+f to reactivate bindings)
