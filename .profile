@@ -4,7 +4,7 @@
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$PATH:/var/lib/snapd/snap/bin:/home/kpfromer/.gem/ruby/2.6.0/bin:/home/kpfromer/.npm-global/bin:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':')"
 export EDITOR="nvim"
-export TERMINAL="termite"
+export TERMINAL="urxvt"
 export BROWSER="google-chrome-stable"
 export READER="zathura"
 export FILE="ranger"
