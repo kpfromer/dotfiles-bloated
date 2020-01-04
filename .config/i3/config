@@ -20,8 +20,11 @@
 # #---Basic Definitions---# #
 # Needed for i3-gaps
 for_window [class="^.*"] border pixel 2
-gaps inner 0
+gaps inner 15
 gaps outer 0
+gaps top 0
+gaps bottom 0
+smart_borders on
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 set $stoprec --no-startup-id dmenurecord kill
@@ -87,9 +90,15 @@ set_from_resource $bg i3wm.color2 #f0f0f0
 set $tp		#00000000
 
 # class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $tp     $bg     $fg  $bg       $tp
-client.unfocused        $tp     $bg     $fg  $bg       $tp
+# client.focused          $bg     $bg     $fg  $bg       $bg
+# client.focused_inactive $tp     $bg     $fg  $bg       $tp
+# client.unfocused        $tp     $bg     $fg  $bg       $tp
+# client.urgent           $bg     $bg     $fg  $bg       $bg
+# client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.focused          $ac     $ac     $fg  $ac       $ac
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 
@@ -155,7 +164,7 @@ bindsym $mod+Shift+a		exec $term -e pulsemixer
 bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
 
-bindsym $mod+d			exec --no-startup-id rofi -show run
+bindsym $mod+d			exec --no-startup-id rofi -show drun
 bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
 set $freeze Distraction-free mode (super+shift+f to reactivate bindings)
@@ -165,8 +174,9 @@ mode "$freeze" { bindsym $mod+Shift+f mode "default"
 bindsym $mod+f			fullscreen toggle
 bindsym $mod+Shift+f		mode "$freeze" ;; exec --no-startup-id notify-send "<b>Distraction-free mode activated.</b> Press Super+Shift+f to return."
 
+bindsym $mod+Shift+g			exec google-chrome-stable --new-window calendar.google.com
 bindsym $mod+g			workspace prev
-bindsym $mod+Shift+g		exec --no-startup-id gimp; workspace $ws5
+#bindsym $mod+Shift+g		exec --no-startup-id gimp; workspace $ws5
 
 bindsym $mod+h			focus left
 bindsym $mod+Shift+h		move left 30
@@ -411,3 +421,4 @@ bindsym XF86Documents		exec $term -e $FILE ~/Documents
 bindsym XF86WLAN		exec $netrefresh
 
 exec --no-startup-id lukescripts
+exec --no-startup-id xflux -z 80027

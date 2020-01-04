@@ -2,7 +2,8 @@
 
 *.font: xft:Ubuntu Mono 10
 
-Xft.dpi:                        220
+*.dpi:                        220
+
 Xft.antialias:                  1
 Xft.autohint:                   1
 Xft.hinting:                    1
