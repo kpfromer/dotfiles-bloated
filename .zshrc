@@ -6,6 +6,7 @@ HISTSIZE=1000
 SAVEHIST=500
 
 # aliases
+alias sdn="sudo shutdown -h now"
 alias cp="cp -i" # Confirm before overwriting something
 alias code="code-insiders"
 
