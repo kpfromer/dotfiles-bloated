@@ -1,3 +1,9 @@
+#           _     
+#   _______| |__  
+#  |_  / __| '_ \ 
+#   / /\__ \ | | |
+#  /___|___/_| |_|
+
 source /usr/share/zsh/scripts/zplug/init.zsh
 
 # zsh history
@@ -19,7 +25,7 @@ zplug "lib/key-bindings",    from:oh-my-zsh
 zplug "plugins/docker",      from:oh-my-zsh
 zplug "plugins/virtualenv"   from:oh-my-zsh
 zplug "plugins/npm",         from:oh-my-zsh, defer:2
-zplug "plugins/yarn",         from:oh-my-zsh, defer:2
+zplug "plugins/yarn",        from:oh-my-zsh, defer:2
 
 # theme
 # todo: change to nord theme
