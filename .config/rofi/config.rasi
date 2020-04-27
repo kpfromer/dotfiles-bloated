@@ -1,5 +1,0 @@
-configuration {
-    theme: "~/.cache/wal/colors-rofi-dark.rasi";
-    show-icons: true;
-    icon-theme: "Papirus-Dark";
-}

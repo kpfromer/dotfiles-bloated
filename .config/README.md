@@ -1,9 +1,0 @@
-# Packages
-- i3lock
-- dunst
-- compton
-- rofi
-- xautolock
-## Fonts
-- nerd-fonts-complete
-- noto-fonts
