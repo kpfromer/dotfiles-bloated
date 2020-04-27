@@ -1,3 +1,10 @@
+"        _           
+" __   _(_)_ __ ___  
+" \ \ / / | '_ ` _ \ 
+"  \ V /| | | | | | |
+"   \_/ |_|_| |_| |_|
+"                    
+
 set nocompatible "I don't necessarily need Vim to be compatible with Vi
 filetype off "Allow for plugins
 
