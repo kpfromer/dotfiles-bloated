@@ -9,6 +9,7 @@ SAVEHIST=500
 alias sdn="sudo shutdown -h now"
 alias cp="cp -i" # Confirm before overwriting something
 alias code="code-insiders"
+alias pkg="yay -Q | fzf"
 
 # load the good parts from oh-my-zsh
 zplug "lib/completion",      from:oh-my-zsh
