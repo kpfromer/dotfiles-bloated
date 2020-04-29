@@ -41,7 +41,8 @@ bspc config focus_follows_pointer true
 # Honor size hints: do not make windows smaller than they wish to be
 #bspc config honor_size_hints true 
 
-
+# run autoload
+$HOME/.config/bspwm/autostart &
 
 
 
