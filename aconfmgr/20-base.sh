@@ -199,7 +199,6 @@ AddPackage --foreign ytfzf-git # A posix script to find and watch youtube videos
 # Files
 
 CopyFile /etc/default/ufw
-CopyFile /etc/group-
 CopyFile /etc/hostname
 CopyFile /etc/lightdm/lightdm.conf
 CopyFile /etc/lightdm/slick-greeter.conf
@@ -207,13 +206,9 @@ CreateLink /etc/localtime ../usr/share/zoneinfo/America/Denver
 CreateLink /etc/os-release ../usr/lib/os-release
 CopyFile /etc/pacman.d/mirrorlist
 CopyFile /etc/pacman.d/mirrorlist.pacnew
-CopyFile /etc/passwd-
 CopyFile /etc/pipewire/media-session.d/alsa-monitor.conf.pacnew
 CopyFile /etc/pipewire/media-session.d/alsa-monitor.conf.pacsave
 CopyFile /etc/pulse/system.pa.pacsave
-CopyFile /etc/resolv.conf
-CopyFile /etc/resolv.conf.bak
-CopyFile /etc/sudoers
 CopyFile /etc/sysctl.d/99-swappiness.conf
 CopyFile /etc/ufw/after.rules
 CopyFile /etc/ufw/after6.rules
@@ -221,8 +216,6 @@ CopyFile /etc/ufw/ufw.conf
 CopyFile /etc/ufw/user.rules
 CopyFile /etc/ufw/user6.rules
 CopyFile /etc/xdg/reflector/reflector.conf
-CreateDir /lost+found 700
-CopyFile /workspace/indent.log
 
 # Services
 
