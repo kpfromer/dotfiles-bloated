@@ -192,8 +192,6 @@ AddPackage --foreign update-grub # Simple wrapper around grub-mkconfig
 AddPackage --foreign xinit-xsession # Allows ~/.xinitrc to be run as a session from your display manager
 AddPackage --foreign yay # Yet another yogurt. Pacman wrapper and AUR helper written in go.
 AddPackage --foreign youtube-dl-git # A small command-line program to download videos from YouTube.com and a few more sites (git version)
-AddPackage --foreign ytfzf-git # A posix script to find and watch youtube videos from the terminal. (With out API)
-
 
 
 # Files

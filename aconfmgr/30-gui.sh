@@ -141,7 +141,7 @@ AddPackage wqy-zenhei # A Hei Ti Style (sans-serif) Chinese Outline Font.
 AddPackage inter-font # A typeface specially designed for user interfaces
 AddPackage --foreign ttf-font-logos # An icon font providing popular Linux distro logos.
 AddPackage --foreign ttf-material-icons-git # Google Material Design icon font
-AddPackage --foreign otf-san-francisco-pro # System font for iOS, macOS, and tvOS. Sourced directly from Apple.
+AddPackage --foreign otf-san-francisco # System font for iOS, macOS, and tvOS. Sourced directly from Apple.
 AddPackage --foreign nerd-fonts-ubuntu-mono # Patched font UbuntuMono from the nerd-fonts library
 
 # Themes
